@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  template: `
+    <app-header />
+
+    <main>
+      <router-outlet />
+    </main>
+
+    <app-footer />
+  `,
 })
-export class AppComponent {
-  title = 'sdcloudhub-frontend';
-}
+export class AppComponent {}
