@@ -1,0 +1,135 @@
+$page-padding-x: clamp(1rem, 5vw, 5rem);
+$text-primary: #f8fafc;
+$text-secondary: #cbd5e1;
+$accent: #22d3ee;
+$accent-light: #67e8f9;
+$border-subtle: rgba(148, 163, 184, 0.2);
+$radius-card: 1.5rem;
+$font-weight-bold: 700;
+
+@mixin eyebrow {
+  color: $accent;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  font-weight: $font-weight-bold;
+}
+
+@mixin btn-primary {
+  display: inline-block;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  background: $accent;
+  color: #020617;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@mixin btn-secondary {
+  display: inline-block;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid $border-subtle;
+  color: $text-primary;
+  text-decoration: none;
+}
+
+
+
+.hero {
+  padding: 2.5rem $page-padding-x;
+  min-height: calc(100vh - 90px);
+
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+
+  background: radial-gradient(circle at top right, rgba(34, 211, 238, 0.18), transparent 30%);
+
+  h1 {
+    font-size: clamp(3rem, 5.8vw, 5rem);
+    line-height: 1;
+    margin: 1rem 0;
+    max-width: 720px;
+  }
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.eyebrow {
+  @include eyebrow;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: $text-secondary;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.primary-btn { @include btn-primary; }
+.secondary-btn { @include btn-secondary; }
+
+.hero-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-card {
+  padding: 2rem;
+  border-radius: $radius-card;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid $border-subtle;
+  backdrop-filter: blur(12px);
+
+  h2 {
+    font-size: 1.75rem;
+    margin: 1rem 0 1.25rem;
+    color: $text-primary;
+  }
+
+  ul {
+    padding-left: 1.2rem;
+    color: $text-secondary;
+    line-height: 2;
+  }
+}
+
+.card-label {
+  color: $accent;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  font-weight: $font-weight-bold;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  color: $accent;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+
+  &:hover { color: $accent-light; }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+}
