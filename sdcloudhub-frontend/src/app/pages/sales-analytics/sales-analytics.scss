@@ -1,0 +1,277 @@
+:host {
+  /* Theme tokens — tweak these to re-skin the whole page */
+  --sa-bg: #ffffff;
+  --sa-ink: #0f172a;
+  --sa-muted: #64748b;
+  --sa-line: #e6e9ef;
+  --sa-accent: #ec7211;        /* AWS orange */
+  --sa-link: #2563eb;
+  --sa-chip: #f1f5f9;
+  --sa-card: #ffffff;
+  --sa-radius: 14px;
+  --sa-shadow: 0 1px 2px rgba(15, 23, 42, 0.04),
+               0 10px 28px rgba(15, 23, 42, 0.07);
+
+  display: block;
+  background: var(--sa-bg);
+  color: var(--sa-ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.sa-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 44px 24px 72px;
+}
+
+/* ---- Header ------------------------------------------------------------ */
+.sa-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sa-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sa-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sa-muted);
+}
+
+.sa-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.sa-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--sa-ink);
+  background: var(--sa-chip);
+  border: 1px solid var(--sa-line);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.sa-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sa-accent);
+  box-shadow: 0 0 0 3px rgba(236, 114, 17, 0.18);
+}
+
+.sa-rule {
+  height: 1px;
+  background: var(--sa-line);
+  margin: 18px 0 32px;
+}
+
+/* ---- Intro ------------------------------------------------------------- */
+.sa-intro h1 {
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  margin: 0 0 14px;
+  max-width: 22ch;
+}
+
+.sa-intro p {
+  margin: 0 0 20px;
+  font-size: 16px;
+  color: var(--sa-muted);
+  max-width: 68ch;
+}
+
+.sa-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sa-tag {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #334155;
+  background: var(--sa-chip);
+  border: 1px solid var(--sa-line);
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+/* ---- Hero figure ------------------------------------------------------- */
+.sa-figure {
+  margin: 36px 0 8px;
+}
+
+.sa-hero {
+  border: 1px solid var(--sa-line);
+  border-radius: var(--sa-radius);
+  overflow: hidden;
+  box-shadow: var(--sa-shadow);
+  background: #fbfcfe;
+}
+
+.sa-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sa-caption {
+  margin-top: 12px;
+  font-size: 13.5px;
+  color: var(--sa-muted);
+  text-align: center;
+}
+
+/* ---- Section heading --------------------------------------------------- */
+.sa-section-head {
+  margin: 48px 0 18px;
+}
+
+.sa-section-head h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+  position: relative;
+  padding-left: 14px;
+}
+
+.sa-section-head h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 4px;
+  border-radius: 4px;
+  background: var(--sa-accent);
+}
+
+/* ---- Highlight grid ---------------------------------------------------- */
+.sa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sa-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--sa-card);
+  border: 1px solid var(--sa-line);
+  border-radius: var(--sa-radius);
+  overflow: hidden;
+  box-shadow: var(--sa-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sa-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05),
+              0 16px 36px rgba(15, 23, 42, 0.1);
+}
+
+.sa-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--sa-line);
+  background: #fbfcfe;
+}
+
+.sa-card-body {
+  padding: 16px 18px 20px;
+}
+
+.sa-card-title {
+  margin: 0 0 6px;
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.sa-card-text {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--sa-muted);
+}
+
+/* ---- Architecture callout --------------------------------------------- */
+.sa-arch {
+  margin: 44px 0 0;
+  padding: 22px 24px;
+  font-size: 14.5px;
+  color: #334155;
+  background: #f8fafc;
+  border: 1px solid var(--sa-line);
+  border-left: 4px solid var(--sa-accent);
+  border-radius: 12px;
+}
+
+.sa-arch strong {
+  color: var(--sa-ink);
+}
+
+.sa-arch code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: #eef2f7;
+  border: 1px solid var(--sa-line);
+  border-radius: 5px;
+  padding: 1px 6px;
+}
+
+.sa-arch a {
+  color: var(--sa-link);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sa-arch a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Footer ------------------------------------------------------------ */
+.sa-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--sa-line);
+  text-align: center;
+  font-size: 13px;
+  color: var(--sa-muted);
+}
+
+/* ---- Responsive -------------------------------------------------------- */
+@media (max-width: 880px) {
+  .sa-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .sa-page {
+    padding: 32px 16px 56px;
+  }
+  .sa-head {
+    flex-direction: column;
+  }
+}

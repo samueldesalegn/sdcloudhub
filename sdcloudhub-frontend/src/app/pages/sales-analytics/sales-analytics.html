@@ -1,0 +1,61 @@
+<section class="sa-page">
+  <header class="sa-head">
+    <div class="sa-brand">
+      <span class="sa-eyebrow">sdcloudhub · analytics</span>
+      <span class="sa-title">Sales Analytics Dashboard</span>
+    </div>
+    <span class="sa-pill"><span class="sa-dot"></span>Snapshot</span>
+  </header>
+  <div class="sa-rule"></div>
+
+  <div class="sa-intro">
+    <h1>Sales performance, end to end — from raw CSV to BI.</h1>
+    <p>
+      An analytics pipeline built entirely as infrastructure-as-code: raw sales data lands
+      in S3, a Glue ETL job curates it to partitioned Parquet, Athena queries it, and
+      QuickSight visualizes it. Below is the resulting dashboard and the story it tells.
+    </p>
+    <div class="sa-tags">
+      @for (tag of tags; track tag) {
+        <span class="sa-tag">{{ tag }}</span>
+      }
+    </div>
+  </div>
+
+  <figure class="sa-figure">
+    <div class="sa-hero">
+      <img [src]="imgBase + '/' + hero" [alt]="heroAlt" loading="lazy" />
+    </div>
+    <figcaption class="sa-caption">
+      The full dashboard — KPI strip (revenue, profit, cost, orders, AOV, margin),
+      revenue-by-channel split, margin-vs-target gauge, and year-over-year growth.
+    </figcaption>
+  </figure>
+
+  <div class="sa-section-head"><h2>What the data shows</h2></div>
+
+  <div class="sa-grid">
+    @for (h of highlights; track h.title) {
+      <figure class="sa-card">
+        <img [src]="imgBase + '/' + h.img" [alt]="h.alt" loading="lazy" />
+        <div class="sa-card-body">
+          <p class="sa-card-title">{{ h.title }}</p>
+          <p class="sa-card-text">{{ h.text }}</p>
+        </div>
+      </figure>
+    }
+  </div>
+
+  <div class="sa-arch">
+    <strong>How it's built.</strong>
+    Raw S3 → Glue ETL (PySpark, partitioned Parquet) → Glue Data Catalog → Athena workgroup → QuickSight.
+    The entire backend — buckets, catalog, ETL job, Athena workgroup, a Lambda data-quality gate, and the
+    embedding API — is defined in a single AWS SAM template and deployed through GitHub Actions. Partitioning
+    uses Athena <code>partition projection</code>, so no crawler is needed.
+    <br /><br />
+    <a [href]="githubUrl" target="_blank" rel="noopener">View the code on GitHub →</a>
+  </div>
+
+  <footer class="sa-footer">Built by Samuel · Sales Analytics IaC project</footer>
+</section>
+
