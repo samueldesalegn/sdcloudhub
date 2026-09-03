@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./pages/home/home').then((m) => m.HomeComponent),
+      import('./pages/contact/contact').then((m) => m.ContactComponent),
   },
   {
     path: 'services',
@@ -24,7 +24,7 @@ export const routes: Routes = [
   {
     path: 'contact',
     loadComponent: () =>
-      import('./pages/contact/contact').then((m) => m.ContactComponent),
+      import('./pages/home/home').then((m) => m.HomeComponent),
   },
   {
     path: 'sales-analytics',

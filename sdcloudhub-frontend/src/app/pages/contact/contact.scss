@@ -164,3 +164,247 @@
 .info-card a:hover {
   color: #22d3ee;
 }
+
+// ---------------------------------------------------------------
+// Digital business card (inlined into Get In Touch — not a
+// separate component). Scoped under .business-card-slot instead
+// of :host since this no longer has its own component boundary.
+// ---------------------------------------------------------------
+
+.business-card-slot {
+  --card-navy: #0f172a; // slate-900, matches .contact-info / .form-card
+  --card-navy-deep: #020617; // slate-950, matches .contact-page background
+  --card-accent: #22d3ee; // cyan-400, matches your nav
+  --card-accent-soft: #67e8f9; // cyan-300
+  --card-muted: #cbd5e1; // slate-300, matches your body copy
+  --card-border: #1e293b; // slate-800, matches .info-card border
+  --card-white: #ffffff;
+  --card-radius: 14px;
+  --card-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.card-scene {
+  width: min(100%, 380px);
+  margin-inline: auto;
+  perspective: 1200px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 7 / 4; // matches the 3.5in x 2in print card
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+  &.is-flipped {
+    transform: rotateY(180deg);
+  }
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  background: linear-gradient(155deg, var(--card-navy) 0%, var(--card-navy-deep) 100%);
+  box-shadow: 0 18px 40px -18px rgba(2, 6, 23, 0.6);
+  color: var(--card-white);
+  backface-visibility: hidden;
+}
+
+.card-face--back {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.card-accent {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 5px;
+  background: var(--card-accent);
+}
+
+.card-body {
+  display: flex;
+  max-width: 68%;
+  flex-direction: column;
+  gap: 10px;
+  padding: clamp(14px, 4%, 22px) clamp(16px, 5%, 26px);
+}
+
+.card-body--back {
+  max-width: 100%;
+  align-items: center;
+  padding: 20px;
+}
+
+.card-name {
+  margin: 0;
+  font-size: clamp(1.05rem, 4vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.card-title {
+  margin: 0.15rem 0 0;
+  color: var(--card-accent);
+  font-size: clamp(0.65rem, 2.4vw, 0.78rem);
+  letter-spacing: 0.02em;
+}
+
+.card-contact {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--card-muted);
+  font-family: var(--card-mono);
+  font-size: clamp(0.62rem, 2.2vw, 0.72rem);
+}
+
+.card-contact__row {
+  display: flex;
+  gap: 6px;
+
+  dt {
+    display: none;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+.card-footer {
+  margin: 0;
+  color: var(--card-muted);
+  font-size: clamp(0.58rem, 2vw, 0.65rem);
+}
+
+.card-wordmark {
+  color: var(--card-accent);
+  font-weight: 700;
+}
+
+.card-footer__divider {
+  margin: 0 6px;
+  opacity: 0.5;
+}
+
+.card-qr {
+  position: absolute;
+  top: clamp(12px, 4%, 20px);
+  right: clamp(12px, 4%, 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-qr__svg {
+  width: clamp(52px, 22%, 78px);
+  aspect-ratio: 1;
+  padding: 5px;
+  border-radius: 6px;
+  background: var(--card-white);
+  fill: var(--card-navy);
+}
+
+.card-qr__caption {
+  color: var(--card-muted);
+  font-size: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.card-flip-btn {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--card-muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.6rem;
+  padding: 4px 10px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--card-accent);
+    color: var(--card-white);
+  }
+}
+
+.card-back__eyebrow {
+  margin: 0 0 4px;
+  color: var(--card-muted);
+  font-size: 0.7rem;
+}
+
+.card-cta {
+  border: none;
+  border-radius: 999px;
+  background: var(--card-accent);
+  color: var(--card-navy-deep);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 10px 22px;
+  transition: background 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--card-accent-soft);
+  }
+}
+
+.card-copy-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.card-copy-btn {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--card-muted);
+  cursor: pointer;
+  font-family: var(--card-mono);
+  font-size: 0.62rem;
+  padding: 6px 10px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--card-accent);
+    color: var(--card-white);
+  }
+}
+
+.card-back__location {
+  margin-top: 12px;
+  color: var(--card-muted);
+  font-size: 0.62rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}
