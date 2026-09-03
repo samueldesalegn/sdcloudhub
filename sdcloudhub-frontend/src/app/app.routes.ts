@@ -22,7 +22,7 @@ export const routes: Routes = [
       import('./pages/training/training').then((m) => m.TrainingComponent),
   },
   {
-    path: 'contact',
+    path: 'home',
     loadComponent: () =>
       import('./pages/home/home').then((m) => m.HomeComponent),
   },
