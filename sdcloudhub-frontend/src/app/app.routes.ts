@@ -7,6 +7,16 @@ export const routes: Routes = [
       import('./pages/contact/contact').then((m) => m.ContactComponent),
   },
   {
+    path: 'contact',
+    loadComponent: () =>
+      import('./pages/contact/contact').then((m) => m.ContactComponent),
+  },
+  {
+    path: 'home',
+    loadComponent: () =>
+      import('./pages/home/home').then((m) => m.HomeComponent),
+  },
+  {
     path: 'services',
     loadComponent: () =>
       import('./pages/services/services').then((m) => m.ServicesComponent),
@@ -20,11 +30,6 @@ export const routes: Routes = [
     path: 'training',
     loadComponent: () =>
       import('./pages/training/training').then((m) => m.TrainingComponent),
-  },
-  {
-    path: 'home',
-    loadComponent: () =>
-      import('./pages/home/home').then((m) => m.HomeComponent),
   },
   {
     path: 'sales-analytics',
