@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Exams — AIF-C01 Field Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="toggle-nav">☰</div>
+
+<div class="shell">
+  <nav class="sidebar" id="sidebar">
+    <div class="brand">AWS CERTIFIED</div>
+    <div class="brand-title"><a href="index.html">AI Practitioner<br>Field Notes</a></div>
+    <div class="nav-group">
+      <a class="nav-link" href="index.html"><span class="nav-num">·</span> Overview</a>
+      <a class="nav-link" href="domain-1.html"><span class="nav-num">1</span> Fundamentals of AI &amp; ML <span class="nav-weight">20%</span></a>
+      <a class="nav-link" href="domain-2.html"><span class="nav-num">2</span> Fundamentals of Gen AI <span class="nav-weight">24%</span></a>
+      <a class="nav-link" href="domain-3.html"><span class="nav-num">3</span> Applications of FMs <span class="nav-weight">28%</span></a>
+      <a class="nav-link" href="domain-4.html"><span class="nav-num">4</span> Responsible AI <span class="nav-weight">14%</span></a>
+      <a class="nav-link" href="domain-5.html"><span class="nav-num">5</span> Security &amp; Governance <span class="nav-weight">14%</span></a>
+    </div>
+    <div class="nav-divider"></div>
+    <div class="nav-group">
+      <a class="nav-link active" href="exams.html"><span class="nav-num">?</span> Practice Exams</a>
+    </div>
+  </nav>
+
+  <main class="main">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">FINAL STEP</div>
+        <h1>Practice Exams</h1>
+        <p class="hero-sub">Two full 65-question mock exams, weighted to match the real domain proportions (13 / 16 / 18 / 9 / 9), with a 90-minute countdown timer and a scaled score out of 1000 — pass is 700.</p>
+      </div>
+    </header>
+
+    <div class="content">
+      <div id="exam-picker">
+        <div class="exam-picker">
+          <div class="exam-option">
+            <h3>Practice Exam 1</h3>
+            <p>65 fresh scenario questions across all five domains. Timer starts the moment you press start.</p>
+            <button class="video-btn" onclick="startExam('exam1')">Start Practice Exam 1</button>
+          </div>
+          <div class="exam-option">
+            <h3>Practice Exam 2</h3>
+            <p>65 different questions, same domain weighting — no overlap with Exam 1.</p>
+            <button class="video-btn" onclick="startExam('exam2')">Start Practice Exam 2</button>
+          </div>
+        </div>
+        <div class="callout callout--tip" style="margin-top:24px;">
+          <div class="callout-label">HOW SCORING WORKS</div>
+          <p>Your raw score (correct ÷ 65) is scaled to a 1000-point range the same way the real exam reports results. 700 or above is a pass. You'll get a full breakdown by domain and a review of every question you missed.</p>
+        </div>
+      </div>
+
+      <div id="exam-active" style="display:none;">
+        <div class="exam-topbar">
+          <div id="exam-name" style="font-family:var(--serif); font-size:17px;"></div>
+          <div class="exam-timer" id="exam-timer">90:00</div>
+          <button class="video-btn secondary exam-flag" onclick="submitExam()">Submit exam</button>
+        </div>
+        <div id="exam-result"></div>
+        <div id="exam-questions"></div>
+        <div style="margin:30px 0 60px; text-align:center;">
+          <button class="video-btn" onclick="submitExam()">Submit exam</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      Built as a study reference for AIF-C01. Not affiliated with or endorsed by AWS.
+    </footer>
+  </main>
+</div>
+
+<script src="exam-data.js"></script>
+<script src="app.js"></script>
+<script>initNav();</script>
+</body>
+</html>

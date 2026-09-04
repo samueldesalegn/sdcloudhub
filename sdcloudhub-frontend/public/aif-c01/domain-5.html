@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domain 5 · Security, Compliance & Governance — AIF-C01 Field Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="toggle-nav">☰</div>
+
+<div class="shell">
+  <nav class="sidebar" id="sidebar">
+    <div class="brand">AWS CERTIFIED</div>
+    <div class="brand-title"><a href="index.html">AI Practitioner<br>Field Notes</a></div>
+    <div class="nav-group">
+      <a class="nav-link" href="index.html"><span class="nav-num">·</span> Overview</a>
+      <a class="nav-link" href="domain-1.html"><span class="nav-num">1</span> Fundamentals of AI &amp; ML <span class="nav-weight">20%</span></a>
+      <a class="nav-link" href="domain-2.html"><span class="nav-num">2</span> Fundamentals of Gen AI <span class="nav-weight">24%</span></a>
+      <a class="nav-link" href="domain-3.html"><span class="nav-num">3</span> Applications of FMs <span class="nav-weight">28%</span></a>
+      <a class="nav-link" href="domain-4.html"><span class="nav-num">4</span> Responsible AI <span class="nav-weight">14%</span></a>
+      <a class="nav-link active" href="domain-5.html"><span class="nav-num">5</span> Security &amp; Governance <span class="nav-weight">14%</span></a>
+    </div>
+    <div class="nav-divider"></div>
+    <div class="nav-group">
+      <a class="nav-link" href="exams.html"><span class="nav-num">?</span> Practice Exams</a>
+    </div>
+    <div class="nav-divider"></div>
+    <div class="nav-group" id="local-toc"></div>
+  </nav>
+
+  <main class="main">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">DOMAIN 5 · 14% OF SCORED CONTENT</div>
+        <h1>Security, Compliance, and Governance for AI Solutions</h1>
+        <p class="hero-sub">The shared responsibility model applied to AI workloads, GDPR in real depth, and securing a multi-tenant RAG system. Three videos, a quiz after each.</p>
+      </div>
+    </header>
+
+    <div class="content">
+      <div id="video-container"></div>
+      <div class="callout callout--tip">
+        <div class="callout-label">NEXT</div>
+        <p>Continue to <a href="exams.html">Practice Exams — two full timed mock exams →</a></p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      Built as a study reference for AIF-C01. Not affiliated with or endorsed by AWS.
+    </footer>
+  </main>
+</div>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+<script>
+  (function(){
+    const container = document.getElementById('video-container');
+    const toc = document.getElementById('local-toc');
+    VIDEOS.d5.forEach((video, i) => {
+      const anchorId = 'v-' + video.id;
+      const shortTitle = video.title.split(' — ')[0];
+      const tocLabel = shortTitle.length > 34 ? shortTitle.slice(0,34) + '…' : shortTitle;
+      toc.innerHTML += `<a class="nav-link" href="#${anchorId}"><span class="nav-num">${i+1}</span> ${tocLabel}</a>`;
+
+      const section = document.createElement('div');
+      section.id = anchorId;
+      section.style.marginBottom = '46px';
+      const scoreId = 'score-' + video.id;
+      section.innerHTML = `<div class="video-block"></div>
+        <div class="section-score" id="${scoreId}">0 of ${TOPIC_QUIZZES[video.id].length} answered</div>
+        <div class="quiz-container-${video.id}"></div>`;
+      container.appendChild(section);
+
+      initVideo(section.querySelector('.video-block'), video, i+1);
+      renderQuizGroup(section.querySelector('.quiz-container-' + video.id), TOPIC_QUIZZES[video.id], video.id, section.querySelector('#' + scoreId));
+    });
+    initNav();
+  })();
+</script>
+</body>
+</html>

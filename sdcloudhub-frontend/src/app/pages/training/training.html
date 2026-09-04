@@ -5,50 +5,78 @@
     <h1>Practical Cloud, Data, and Coding Training</h1>
 
     <p class="hero-text">
-      Learn real-world skills by building production-style projects with AWS,
-      SQL, Python, JavaScript, TypeScript, Angular, and data analytics tools.
+      Real projects, real tools, portfolio-ready skills — from self-paced
+      courses you can start today to hands-on group programs.
     </p>
 
     <div class="hero-actions">
-      <a href="#programs" class="btn primary">View Programs</a>
-      <a routerLink="/contact" class="btn secondary">Request Training</a>
+      <a href="#courses" class="btn primary">Start a Course</a>
+      <a href="#programs" class="btn secondary">Browse Programs</a>
     </div>
   </div>
+
+  <section id="courses" class="courses-section">
+    <div class="section-header">
+      <p class="eyebrow">Start Right Now</p>
+      <h2>Self-Paced Courses</h2>
+      <p>No scheduling, no waiting on a callback — start today and learn at your own pace.</p>
+    </div>
+
+    <div class="course-grid">
+
+      <!-- AWS AI Practitioner -->
+      <article class="course-card">
+        <div class="course-card-body">
+          <p class="course-tag">AWS Certification</p>
+
+          <h3>AWS Certified AI Practitioner (AIF-C01)</h3>
+
+          <p>
+            Narrated video lessons covering every domain of the official exam
+            guide — including agentic AI, RAG, and Bedrock AgentCore — each
+            with a quiz right after it, plus two full timed practice exams.
+          </p>
+
+          <div class="course-stats">
+            <div><strong>26</strong><span>videos</span></div>
+            <div><strong>58</strong><span>quiz questions</span></div>
+            <div><strong>2</strong><span>timed practice exams</span></div>
+          </div>
+        </div>
+
+        <a href="/aif-c01/index.html" class="course-btn">Start the course</a>
+      </article>
+
+    </div>
+  </section>
 
   <section id="programs" class="programs-section">
     <div class="section-header">
       <p class="eyebrow">Training Programs</p>
 
-      <h2>What We Teach</h2>
+      <h2>Instructor-Led Training</h2>
 
       <p>
-        Hands-on training for beginners, professionals, and teams who want
-        practical technology skills and portfolio-ready experience.
+        Custom-scheduled training for individuals and teams who want guided,
+        hands-on instruction.
       </p>
     </div>
 
     <div class="program-grid">
 
       <!-- Angular Course -->
-      <article class="program-card featured-course">
-        <p class="course-label">Featured Course</p>
-
+      <article class="program-card">
         <h3>Modern Angular Practical Course</h3>
 
         <p>
-          Learn Angular by building real applications from scratch using
-          standalone components, routing, signals, services, dependency injection,
-          reactive forms, API integration, and deployment.
+          Build real applications from scratch with standalone components,
+          signals, routing, and reactive forms.
         </p>
 
         <ul>
-          <li>Angular CLI and project structure</li>
-          <li>Standalone components and templates</li>
-          <li>Signals, computed signals, and effects</li>
-          <li>Component communication with inputs and outputs</li>
-          <li>Services and dependency injection</li>
-          <li>Routing and active navigation</li>
-          <li>Reactive forms and validation</li>
+          <li>Standalone components and signals</li>
+          <li>Routing and reactive forms</li>
+          <li>API integration and services</li>
           <li>Portfolio-ready final project</li>
         </ul>
 
@@ -63,7 +91,7 @@
 
         <p>
           Build real-world cloud data pipelines using DynamoDB, S3, Glue,
-          Athena, Lambda, QuickSight, and serverless architectures.
+          Athena, and QuickSight.
         </p>
 
         <ul>
@@ -72,15 +100,17 @@
           <li>Athena SQL analytics</li>
           <li>QuickSight dashboards</li>
         </ul>
+
+        <a routerLink="/contact" class="course-btn">Request Training</a>
       </article>
 
       <!-- SQL -->
       <article class="program-card">
-        <h3>SQL & Data Analytics</h3>
+        <h3>SQL &amp; Data Analytics</h3>
 
         <p>
-          Learn SQL from fundamentals to advanced analytics, joins,
-          aggregations, views, reporting, and dashboard-ready datasets.
+          SQL from fundamentals to advanced analytics, joins, aggregations,
+          and dashboard-ready datasets.
         </p>
 
         <ul>
@@ -89,6 +119,8 @@
           <li>Views and reporting</li>
           <li>Analytics use cases</li>
         </ul>
+
+        <a routerLink="/contact" class="course-btn">Request Training</a>
       </article>
 
       <!-- Python -->
@@ -96,8 +128,8 @@
         <h3>Python for Data</h3>
 
         <p>
-          Use Python to clean, transform, analyze, and automate data workflows
-          using practical business-oriented examples.
+          Clean, transform, analyze, and automate data workflows with
+          practical, business-oriented examples.
         </p>
 
         <ul>
@@ -106,6 +138,8 @@
           <li>Automation scripts</li>
           <li>Data preparation</li>
         </ul>
+
+        <a routerLink="/contact" class="course-btn">Request Training</a>
       </article>
 
       <!-- Web -->
@@ -113,8 +147,8 @@
         <h3>Web Development</h3>
 
         <p>
-          Build modern web applications using JavaScript, TypeScript,
-          Angular, Node.js, APIs, and cloud deployment workflows.
+          Build modern web applications with JavaScript, TypeScript, Angular,
+          Node.js, and cloud deployment.
         </p>
 
         <ul>
@@ -123,15 +157,17 @@
           <li>Node.js APIs</li>
           <li>Cloud deployment</li>
         </ul>
+
+        <a routerLink="/contact" class="course-btn">Request Training</a>
       </article>
 
       <!-- Kids -->
       <article class="program-card">
-        <h3>Kids & Youth Coding</h3>
+        <h3>Kids &amp; Youth Coding</h3>
 
         <p>
-          Beginner-friendly coding programs designed to introduce young learners
-          to programming and problem solving.
+          Beginner-friendly programs introducing young learners to
+          programming and problem solving.
         </p>
 
         <ul>
@@ -140,6 +176,8 @@
           <li>Simple web pages</li>
           <li>Fun coding projects</li>
         </ul>
+
+        <a routerLink="/contact" class="course-btn">Request Training</a>
       </article>
 
       <!-- Corporate -->
@@ -148,7 +186,7 @@
 
         <p>
           Customized technical training programs for organizations, teams,
-          schools, nonprofits, and businesses.
+          schools, and nonprofits.
         </p>
 
         <ul>
@@ -157,71 +195,15 @@
           <li>Dashboard development</li>
           <li>Team upskilling</li>
         </ul>
+
+        <a routerLink="/contact" class="course-btn">Request Training</a>
       </article>
 
     </div>
   </section>
 
-  <section class="learning-path-section">
-    <div class="section-header">
-      <p class="eyebrow">Learning Path</p>
+  <p class="training-footer-note">
+    Don't see what you need? <a routerLink="/contact">Contact us</a> to build a custom program.
+  </p>
 
-      <h2>How the Training Works</h2>
-
-      <p>
-        SD Cloud Hub training focuses on practical implementation,
-        portfolio development, and real-world engineering workflows.
-      </p>
-    </div>
-
-    <div class="path-grid">
-
-      <div class="path-step">
-        <span>01</span>
-
-        <h3>Learn the Concept</h3>
-
-        <p>
-          Start with clear explanations, architecture concepts,
-          and practical engineering foundations.
-        </p>
-      </div>
-
-      <div class="path-step">
-        <span>02</span>
-
-        <h3>Build the Project</h3>
-
-        <p>
-          Apply the concepts through guided hands-on projects,
-          APIs, dashboards, and modern applications.
-        </p>
-      </div>
-
-      <div class="path-step">
-        <span>03</span>
-
-        <h3>Deploy and Present</h3>
-
-        <p>
-          Create portfolio-ready applications and learn how to
-          present technical projects professionally.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="training-cta">
-    <h2>Ready to Build Real Technical Skills?</h2>
-
-    <p>
-      Contact SD Cloud Hub for individual training, group classes,
-      mentoring, or customized corporate programs.
-    </p>
-
-    <a routerLink="/contact" class="btn primary">
-      Contact Us
-    </a>
-  </section>
 </section>
